@@ -1,0 +1,22 @@
+.AdvertisementProducts {
+    @media (max-width: 1280px){
+       padding: 6rem 0;
+    }
+    @media (max-width: 1024px){
+        display: block;
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+    }
+
+    @media (max-width: 638px){
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
+
+.AdvertisementProductsIpad {
+    @media (max-width: 1024px){
+        max-width: 100%;
+        margin-bottom: 25px;
+    }
+}

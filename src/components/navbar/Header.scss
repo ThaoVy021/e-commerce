@@ -1,0 +1,52 @@
+.sticky{
+    position: sticky;
+    top:0;
+    z-index: 20;
+    background: #f1f5f9;
+}
+
+.header {
+    margin: 0 auto !important;
+    min-height: 50px;
+    @media (max-width: 1024px){
+        margin: 0 !important;
+    }
+    @media (max-width: 768px){
+        padding: 20px !important;
+    }
+}
+
+.sticked {
+    background: white;
+    box-shadow: 0 2px 5px #d4d4d8;
+    position: fixed;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    z-index: 100;
+}
+
+.logoSine {
+    font-family: 'Roboto',sans-serif;
+}
+
+@media (max-width: 1280px){
+    .headerNavBar{
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 1024px){
+    .headerLogoNavBar{
+        flex-direction: row-reverse;
+    }
+    .headerLogo{
+        margin-left: -120px;
+        display: flex;
+        align-items: center;
+    }
+}
+@media (max-width: 570px){
+    .headerLogo{
+        margin-left: 0;
+    }
+}

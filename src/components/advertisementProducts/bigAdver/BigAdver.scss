@@ -1,0 +1,36 @@
+.advertisementProducts {
+    .ant-card-body {
+        display: flex;
+    }
+}
+
+.advertisementProducts:hover {
+     box-shadow: none;
+}
+
+.advertisementProducts:hover {
+    .inforAdvertisementProducts {
+        .titleInforAdvertisementProducts h3{
+            color: #e99c2e;
+        }
+        .ant-space-item button{
+            background: #64748b;
+            .discoverMoreHover{
+                color: white !important;
+            }
+        }
+    }
+}
+
+.inforAdvertisementProducts{
+    @media (max-width: 1280px){
+        padding: 3rem 0 !important;
+    }
+}
+
+
+@media (max-width: 638px){
+    .bigAdverMobile {
+        padding: 0 10px !important;
+    }
+}

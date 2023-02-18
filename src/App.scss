@@ -1,0 +1,23 @@
+$maincolor: #e99c2e;
+
+.mainColor {
+  color: $maincolor;
+} 
+.mainColorBg {
+  background: #e99c2e;
+} 
+.secondColor {
+  color: #f1f5f9;
+}
+.secondColorBg {
+  background: #f1f5f9;
+}
+
+.App {
+  width: 100% !important;
+}
+
+// .moreInforButton {
+//   color: $maincolor;
+//   background-color: $secondColor;
+// }
