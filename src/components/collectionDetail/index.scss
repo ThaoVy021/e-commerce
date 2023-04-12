@@ -39,6 +39,10 @@
       max-width: 100%;
     }
   }
+  @media (max-width: 638px) {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
 }
 
 .banner::before {

@@ -31,6 +31,9 @@
       .ant-anchor-link-title {
       color: $mainColor;
     }
+    .ant-anchor-link:first-of-type{
+      padding-right: 45px;
+    }
 
     .ant-anchor-link-title-active {
       color: $mainColor !important;

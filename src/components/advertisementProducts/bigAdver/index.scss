@@ -1,8 +1,49 @@
-@import "../../../App.scss";
+@import '../../../App.scss';
 
 .advertisementProducts {
+  @media (max-width: 1024px) {
+    width: 100%;
+    margin: 0 auto;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 0 auto;
+  }
   .ant-card-body {
     display: flex;
+    @media (max-width: 1024px) {
+      justify-content: center;
+      margin: 0 auto;
+      width: 45%;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    .ant-row {
+      @media (max-width: 1024px) {
+        display: block;
+        margin: 0 auto;
+
+        .ant-col {
+          margin: 0 auto;
+          max-width: 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .ant-col {
+          width: 100%;
+
+          img {
+            width: 100%;
+            height: auto !important;
+          }
+        }
+      }
+    }
+
     @media (max-width: 638px) {
       padding: 12px;
     }
@@ -30,6 +71,9 @@
 .inforAdvertisementProducts {
   @media (max-width: 1280px) {
     padding: 3rem 0 !important;
+  }
+  @media (max-width: 1024px) {
+    padding: 3rem 1rem !important;
   }
 }
 

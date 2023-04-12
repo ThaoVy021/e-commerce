@@ -13,6 +13,16 @@
   }
 }
 
+.ant-card-body {
+  @media (max-width: 1024px) {
+    margin: 0 auto;
+    width: 45%;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
 .smallAdverInfor {
   .ant-card-meta-title {
     font-size: 20px !important;
@@ -22,7 +32,7 @@
 
 @media (max-width: 1024px) {
   .productHover {
-    display: flex;
+    display: block;
     width: 100%;
     justify-content: center;
     padding: 1rem 0;
@@ -30,20 +40,37 @@
 
   .smallAdverImg {
     padding: 1.5rem 3rem !important;
+    width: 18rem !important;
+    height: auto !important;
+    margin: 0 auto ;
   }
 
   .smallAdverInfor {
+    padding: 0.5rem 1.5rem;
+    @media (max-width: 638px) {
+      width: 100%;
+      margin: 0 auto !important;
+    }
+
     .ant-card-meta-title {
       text-align: start;
     }
+
     .ant-card-meta-description {
       text-align: start;
     }
   }
 }
 
+@media (max-width: 768px) {
+  .smallAdverImg {
+    width: 100% !important;
+  }
+}
+
 @media (max-width: 638px) {
   .productHover {
+    width: 100%;
     .ant-card-cover {
       display: flex;
       justify-content: center;
