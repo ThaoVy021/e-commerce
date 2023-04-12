@@ -1,3 +1,3 @@
-import featuredProducts2 from './imageDetail/featuredProducts2.jpg'
+import featuredProducts2 from "./imageDetail/featuredProducts2.jpg";
 
-export default featuredProducts2
+export default featuredProducts2;

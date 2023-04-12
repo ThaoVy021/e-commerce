@@ -1,3 +1,3 @@
-import latestBlog3 from './imageDetail/latestBlog3.jpg'
+import latestBlog3 from "./imageDetail/latestBlog3.jpg";
 
-export default latestBlog3
+export default latestBlog3;

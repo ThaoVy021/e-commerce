@@ -1,0 +1,14 @@
+@import "../../../App.scss";
+
+.textHover:hover {
+  .titleLatestBlog {
+    color: $mainColor !important;
+  }
+}
+
+.textHover {
+  @media (max-width: 521px) {
+    width: 80%;
+    margin: 0 auto;
+  }
+}

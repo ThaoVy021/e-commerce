@@ -1,3 +1,3 @@
-import arrivals2 from './imageDetail/arrivals2.png'
+import arrivals2 from "./imageDetail/arrivals2.png";
 
-export default arrivals2
+export default arrivals2;

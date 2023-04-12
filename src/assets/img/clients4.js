@@ -1,3 +1,3 @@
-import clients4 from './imageDetail/clients4.png'
+import clients4 from "./imageDetail/clients4.png";
 
-export default clients4
+export default clients4;

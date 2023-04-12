@@ -1,0 +1,40 @@
+@import "../../../App.scss";
+
+.advertisementProducts {
+  .ant-card-body {
+    display: flex;
+    @media (max-width: 638px) {
+      padding: 12px;
+    }
+  }
+}
+
+.advertisementProducts:hover {
+  box-shadow: none;
+}
+
+.advertisementProducts:hover {
+  .inforAdvertisementProducts {
+    .titleInforAdvertisementProducts .titleColor {
+      color: $mainColor !important;
+    }
+    .ant-space-item button {
+      background: $titleColor;
+      .discoverMoreHover {
+        color: white !important;
+      }
+    }
+  }
+}
+
+.inforAdvertisementProducts {
+  @media (max-width: 1280px) {
+    padding: 3rem 0 !important;
+  }
+}
+
+@media (max-width: 638px) {
+  .bigAdverMobile {
+    padding: 0 8px !important;
+  }
+}

@@ -1,12 +1,15 @@
-import './ImageLatestBlog.scss';
+import "./index.scss";
+interface PropsPictureInLatestBlog {
+  image: string;
+}
 
-function ImageLatestBlog(props: any) {
-    return (
-        <div className='flex justify-center backgroundImg imageLatestBlog'>
-            <img src={props.image} alt="Latest Blog" />
-            <div className='backgroundImgHover'></div>
-        </div>
-    );
+function ImageLatestBlog(props: PropsPictureInLatestBlog) {
+  return (
+    <div className="backgroundImg imageLatestBlog">
+      <img src={props.image} alt="Latest Blog" />
+      <div className="backgroundImgHover"></div>
+    </div>
+  );
 }
 
 export default ImageLatestBlog;

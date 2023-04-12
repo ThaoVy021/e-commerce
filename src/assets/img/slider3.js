@@ -1,3 +1,3 @@
-import imgSlider3 from './imageDetail/slider3.png'
+import imgSlider3 from "./imageDetail/slider3.png";
 
-export default imgSlider3
+export default imgSlider3;

@@ -1,0 +1,58 @@
+@import "../../../App.scss";
+
+.productHover.ant-card-hoverable:hover {
+  box-shadow: none;
+  .ant-card-body {
+    .ant-card-meta {
+      .ant-card-meta-detail {
+        .ant-card-meta-title {
+          color: $mainColor !important;
+        }
+      }
+    }
+  }
+}
+
+.smallAdverInfor {
+  .ant-card-meta-title {
+    font-size: 20px !important;
+    color: $titleColor !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .productHover {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+
+  .smallAdverImg {
+    padding: 1.5rem 3rem !important;
+  }
+
+  .smallAdverInfor {
+    .ant-card-meta-title {
+      text-align: start;
+    }
+    .ant-card-meta-description {
+      text-align: start;
+    }
+  }
+}
+
+@media (max-width: 638px) {
+  .productHover {
+    .ant-card-cover {
+      display: flex;
+      justify-content: center;
+
+      .smallAdverImg {
+        padding: 1.5rem 0.5rem !important;
+        width: 240px;
+        height: auto;
+      }
+    }
+  }
+}

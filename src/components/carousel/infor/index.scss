@@ -1,0 +1,78 @@
+@import "../../../App.scss";
+
+.inforCarousel {
+  animation: carousel 1s alternate;
+
+  h1 {
+    font-weight: 400;
+  }
+
+  @media (max-width: 1024px) {
+    padding-top: 2rem;
+    padding-left: 0 !important;
+  }
+}
+
+.nameProduct {
+  margin-top: 20px !important;
+}
+
+.price::before {
+  content: "";
+  width: 25px;
+  height: 1px;
+  background: $secondBoldColor;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+.styleMobile {
+  width: 100%;
+  Button {
+    width: 170px;
+    height: 60px;
+  }
+  @media (max-width: 540px) {
+    display: block;
+    text-align: left;
+
+    .buttonAdd {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.buttonAdd:hover {
+  color: $mainColor !important;
+  background: transparent !important;
+  border-color: $mainColor !important;
+}
+
+.buttonMore:hover {
+  background-color: $secondColor !important;
+  color: $mainColor !important;
+  border-color: $mainColor !important;
+}
+
+@keyframes carousel {
+  0% {
+    transform: scale(0, 1);
+  }
+}
+
+@media (max-width: 1280px) {
+  .inforCarousel {
+    padding-left: 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .inforCarousel h4 {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+  }
+  .inforCarousel h1 {
+    font-size: 1.5rem; /* 24px */
+    line-height: 2rem; /* 32px */
+  }
+}

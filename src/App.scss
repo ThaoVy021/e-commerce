@@ -1,23 +1,38 @@
-$maincolor: #e99c2e;
+$mainColor: #e99c2e;
+$secondColor: #f1f5f9;
+$secondBoldColor: #616060;
+$secondLightColor: #998d80;
+$titleColor: #64748b;
 
 .mainColor {
-  color: $maincolor;
-} 
+  color: $mainColor !important;
+}
 .mainColorBg {
-  background: #e99c2e;
-} 
+  background: $mainColor !important;
+}
 .secondColor {
-  color: #f1f5f9;
+  color: $secondColor !important;
 }
 .secondColorBg {
-  background: #f1f5f9;
+  background: $secondColor !important;
+}
+
+.secondBoldColor {
+  color: $secondBoldColor !important;
+}
+
+.secondBoldBg {
+  background: $secondBoldColor !important;
+}
+
+.secondLightColor {
+  color: $secondLightColor !important;
+}
+
+.titleColor {
+  color: $titleColor !important;
 }
 
 .App {
   width: 100% !important;
 }
-
-// .moreInforButton {
-//   color: $maincolor;
-//   background-color: $secondColor;
-// }

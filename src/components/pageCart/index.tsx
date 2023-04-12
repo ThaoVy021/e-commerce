@@ -1,68 +1,144 @@
-import { cart, sumMoney } from "../../mockdata/Cart";
+import React, { useState } from "react";
 import { DeleteOutlined } from "@ant-design/icons";
-import { Button, Popconfirm, Space } from "antd";
+import { Button, message, Popconfirm, Space, Table } from "antd";
 import type { ColumnsType } from "antd/es/table";
-import Cart from "./cart";
-import "./PageCart.scss";
-import { useSelector } from "react-redux";
-import { selectProductsInCart } from "../../store/slices/amountProductsInCart";
+import "./index.scss";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  removeInCarts,
+  selectProductsInCart,
+  removeSelectedItems,
+} from "../../store/slices/cart";
 
-interface DataCart {
-  key: React.ReactNode;
-  nameProduct: string;
+interface CartType {
+  Key: React.Key;
+  title: string;
   price: number;
-  amount: number;
-  pay: number;
+  amountAdd: number;
 }
 
 function PageCart() {
+  const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
+
   const productsInCart = useSelector(selectProductsInCart);
-  const uniqueIds: any[] = [];
+
+  const dispatch = useDispatch();
+
+  const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
+    setSelectedRowKeys(newSelectedRowKeys);
+  };
+  const rowSelection = {
+    selectedRowKeys,
+    onChange: onSelectChange,
+  };
+  const hasSelected = selectedRowKeys.length > 0;
+
+  const uniqueItems: CartType[] = [];
   productsInCart.forEach((e: any) => {
-    if (uniqueIds.indexOf(e.id) === -1) {
-      uniqueIds.push(e.id);
+    if (uniqueItems.indexOf(e.id) === -1) {
+      uniqueItems.push(e.id);
     }
   });
-
-  const cart = uniqueIds.map((uq) => {
+  const carts = uniqueItems.map((uq) => {
     const products = productsInCart.filter((e: any) => e.id === uq);
-    console.log(products[0]);
     return {
       ...products[0],
-      amount: products.length,
+      amountAdd: products
+        .map((product: any) => {
+          return product.amountAdd;
+        })
+        .reduce((a: number, b: number) => a + b, 0),
+      key: products[0].id,
     };
   });
 
-  const columnsCart = [
+  const selectedCarts = carts.filter((item) => {
+    return selectedRowKeys.find((index) => item.id === index);
+  });
+  const totalPriceSelected = selectedCarts.reduce(
+    (accumulator, currentValue) =>
+      accumulator + currentValue.price * currentValue.amountAdd,
+    0
+  );
+
+  const idItemsCart = carts.map((id) => id.id);
+
+  const deleteProduct = (removeItem: any) => {
+    dispatch(removeInCarts({ id: removeItem.id, amount: removeItem.amount }));
+    message.open({
+      type: "success",
+      content: "Deleted",
+    });
+  };
+
+  const chooseAllProduct = () => {
+    return hasSelected ? selectedRowKeys : setSelectedRowKeys(idItemsCart);
+  };
+
+  const deletProductChoosed = (removeAllItem: any) => {
+    return (
+      dispatch(
+        removeSelectedItems({
+          removedItems: selectedRowKeys,
+          amount: removeAllItem.filter((item: any) => item.amount),
+        })
+      ),
+      setSelectedRowKeys([]),
+      message.open({
+        type: "success",
+        content: `Deleted ${selectedRowKeys.length} Products`,
+      })
+    );
+  };
+
+  const columnsCart: ColumnsType<CartType> = [
     {
-      title: "Sản phẩm",
-      dataIndex: "productName",
-      key: "productName",
+      title: "Product",
+      dataIndex: "title",
+      key: "title",
+      sortDirections: ["descend", "ascend"],
+      sorter: (a, b) => a.title.localeCompare(b.title),
     },
     {
-      title: "Giá",
+      title: "Price",
       dataIndex: "price",
       key: "price",
       width: "12%",
+      sorter: (a, b) => a.price - b.price,
+      render: (value) => {
+        return <span>$ {value.toLocaleString("en-US")}</span>;
+      },
     },
     {
-      title: "Số lượng",
-      dataIndex: "amount",
+      title: "Amount",
+      dataIndex: "amountAdd",
       width: "10%",
-      key: "amount",
+      key: "amountAdd",
+      sorter: (a, b) => a.amountAdd - b.amountAdd,
     },
     {
-      title: "Thành tiền",
+      title: "Pay",
       width: "20%",
-      key: "price",
-      render: (row: any) => row.price * row.amount,
+      key: "totalPrice",
+      render: (row: any) => {
+        return (
+          <span>$ {row.price * row.amountAdd.toLocaleString("en-US")}</span>
+        );
+      },
     },
     {
       title: "Action",
       dataIndex: "action",
-      render: () => (
+      key: "x",
+      render: (row, record) => (
         <Space size="middle" className="cursor-pointer">
-          <Popconfirm title="Sure to delete?" className="popconfirm">
+          <Popconfirm
+            title="Sure to delete?"
+            okText="Yes"
+            cancelText="No"
+            className="popconfirm"
+            onConfirm={() => deleteProduct(record)}
+          >
             <DeleteOutlined />
           </Popconfirm>
         </Space>
@@ -71,39 +147,59 @@ function PageCart() {
     },
   ];
 
-  const columnsPay = [
-    {
-      title: "Tổng cộng",
-      dataIndex: "sumPay",
-      key: "sumPay",
-      render: (row: any) => row.price * row.amount,
-    },
-  ];
-
   return (
     <div id="pageCart">
-      <div className="container py-8 pageCart">
-        <Cart
-          cart={cart}
-          title={`Bạn có ${uniqueIds.length} sản phẩm trong giỏ hàng`}
+      <div className="block m-auto container py-8 px-4 pageCart">
+        <div className="py-6 flex">
+          <div
+            className="font-semibold mr-8 cursor-pointer underline"
+            onClick={chooseAllProduct}
+          >
+            {hasSelected
+              ? `Choosed ${selectedRowKeys.length} products`
+              : "Choose all products"}
+          </div>
+          <span
+            className={
+              hasSelected
+                ? `font-semibold cursor-pointer underline`
+                : "font-semibold ml-8 cursor-pointer underline"
+            }
+            onClick={() => deletProductChoosed(carts)}
+          >
+            {hasSelected ? `Delete ${selectedRowKeys.length} products` : ""}
+          </span>
+        </div>
+        <Table
+          rowSelection={rowSelection}
           columns={columnsCart}
+          dataSource={carts}
+          scroll={{ x: 1000, y: 600 }}
+          summary={() => (
+            <Table.Summary fixed>
+              <Table.Summary.Row className="font-bold">
+                <Table.Summary.Cell colSpan={4} index={0}>
+                  Total Pay
+                </Table.Summary.Cell>
+                <Table.Summary.Cell colSpan={2} index={1}>
+                  {hasSelected ? totalPriceSelected : "0"}
+                </Table.Summary.Cell>
+              </Table.Summary.Row>
+            </Table.Summary>
+          )}
         />
-        <div className="flex justify-between py-14">
+        <div className="py-14">
           <textarea
-            placeholder="Ghi chú"
-            className="secondColorBg p-5 w-6/12"
+            placeholder="Note..."
+            className="secondColorBg p-5 w-full h-52"
           />
-          <div className="border-slate-500 w-5/12 text-center tablePay">
-            <Cart
-              cart={sumMoney}
-              title="Tổng chi phí giỏ hàng"
-              columns={columnsPay}
-            />
+          <div className="flex justify-center">
             <Button
               type="primary"
-              className=" capitalize my-8 text-base font-medium mainColorBg hover:bg-transparent buttonAdd"
+              size="large"
+              className="my-8 text-base font-medium mainColorBg hover:bg-transparent buttonAdd"
             >
-              thanh toán
+              Thanh Toán
             </Button>
           </div>
         </div>

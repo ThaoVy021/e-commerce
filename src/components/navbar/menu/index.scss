@@ -1,0 +1,128 @@
+@import "../../../App.scss";
+
+.menuDesktop {
+  border-inline-end: 0 !important;
+
+   .ant-anchor-fixed{
+    display: flex;
+    padding-inline-start: 0px;
+    @media (max-width: 1024px) {
+      display: block;
+    }
+
+    .ant-anchor-ink{
+      width: 0 !important;
+      background-color: $mainColor;
+    }
+
+    .ant-anchor-link{
+      padding-inline: 16px 35px;
+      padding-block: 5px;
+
+      .ant-anchor-link-title{
+        color: $secondBoldColor;
+        transition: 0.3s linear;
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+    }
+    .ant-anchor-link:hover
+      .ant-anchor-link-title {
+      color: $mainColor;
+    }
+
+    .ant-anchor-link-title-active {
+      color: $mainColor !important;
+      }
+    
+  }
+}
+
+.menuDesktop::before {
+  border-bottom: 0 !important;
+}
+
+.panelCollapse {
+  border-bottom: 0px !important;
+  margin-top: -20px;
+  width: 100%;
+  left: 0;
+  .ant-collapse-content {
+    background-color: white !important;
+    overflow-y: auto !important;
+    max-height: 300px;
+    .ant-collapse-content-box {
+      padding: 0px !important;
+      @media (max-width: 481px) {
+        padding: 16px 0px;
+        ul li {
+          min-width: 0px;
+        }
+      }
+      @media (max-width: 1024px) {
+        .ant-anchor .ant-anchor-link {
+          padding-inline: 35px 35px;
+          padding-block: 20px;
+          padding: 30px 35px;
+        }
+      }
+    }
+  }
+
+  .ant-collapse-header {
+    margin-left: 25px;
+  }
+
+  .ant-collapse-content {
+    background-color: $secondColor;
+    box-shadow: 0 2px 5px #00000033;
+  }
+}
+
+.panelCollapse .ant-collapse-header {
+  color: $mainColor !important;
+  padding: 12px 10px !important;
+  .ant-collapse-expand-icon {
+    padding-inline-end: 0px !important;
+  }
+}
+
+.menuMobile {
+  border-inline-end: 0px !important;
+  .ant-anchor-ink{
+    width: 0 !important;
+    background-color: $mainColor;
+  }
+
+  .ant-anchor-link{
+    
+
+    .ant-anchor-link-title{
+      color: $secondBoldColor;
+      transition: 0.3s linear;
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+  }
+  .ant-anchor-link:hover
+    .ant-anchor-link-title {
+    color: $mainColor;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dropdownMenu {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dropdownMenu {
+    display: block;
+  }
+  .menuDesktop {
+    display: none !important;
+  }
+}

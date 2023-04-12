@@ -1,0 +1,43 @@
+@import "../../App.scss";
+
+.pageCart {
+  width: 75%;
+  margin: 0 auto;
+
+  .textAmountProducts {
+    margin-bottom: 16px;
+
+    span {
+      line-height: 40.313px;
+      font-size: 26px;
+      font-weight: 400;
+    }
+  }
+
+  @media (max-width: 575px) {
+    width: 95%;
+  }
+}
+
+.ant-popover .ant-btn-primary {
+  background-color: $mainColor;
+}
+
+@media (max-width: 575px) {
+  .pageCart {
+    width: 95%;
+  }
+}
+
+
+
+
+
+.tablePay .ant-table-content {
+  table {
+    text-align: center;
+  }
+  .ant-table-thead th {
+    text-align: center;
+  }
+}

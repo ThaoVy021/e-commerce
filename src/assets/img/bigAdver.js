@@ -1,3 +1,3 @@
-import bigAdver from './imageDetail/bigAdver.png'
+import bigAdver from "./imageDetail/bigAdver.png";
 
-export default bigAdver
+export default bigAdver;

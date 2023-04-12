@@ -1,11 +1,29 @@
-function InformationLatestBlog(props: any) {
-    return (
-      <div className='p-5'>
-        <h4 className='flex justify-start text-base font-semibold text-zinc-600 textHover'>{props.productName}</h4>
-        <span className="text-zinc-400 flex justify-start my-3">By {props.author} / {props.time}</span>
-        <p className='flex justify-center text-sm text-zinc-600'>{props.description}</p>
-      </div>
-    );
+import { Typography } from "antd";
+import "./index.scss";
+
+const { Title, Paragraph } = Typography;
+
+interface PropsInformationLatestBlog {
+  productName: string;
+  author: string;
+  time: string;
+  description: string;
+}
+
+function InformationLatestBlog(props: PropsInformationLatestBlog) {
+  return (
+    <div className="pt-5 textHover">
+      <Title level={5} className="secondBoldColor titleLatestBlog">
+        {props.productName}
+      </Title>
+      <span className="secondLightColor flex my-3">
+        By {props.author} / {props.time}
+      </span>
+      <Paragraph className="secondBoldColor whitespace-normal">
+        {props.description}
+      </Paragraph>
+    </div>
+  );
 }
 
 export default InformationLatestBlog;

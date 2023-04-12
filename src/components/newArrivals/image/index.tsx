@@ -2,25 +2,45 @@ import {
   ShoppingCartOutlined,
   HeartOutlined,
   ExpandOutlined,
-} from "@ant-design/icons";
-import { useDispatch } from "react-redux";
-import {
-    addToCart,
-  incrementProductsInCart,
-} from "../../../store/slices/amountProductsInCart";
+} from '@ant-design/icons'
+import React from 'react'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { addToCart } from '../../../store/slices/cart'
 
-function ImageAnimation(props: any) {
-  const dispatch = useDispatch();
+interface PropsImageAnimation {
+  id: number
+  sales: string
+  image: string
+  amountAdd?: number
+}
+
+function ImageAnimation(props: PropsImageAnimation) {
+  const navigate = useNavigate()
+  const moveToDetailProductPage = (id: number) => {
+    navigate(`/pageDetailProduct/${id}`)
+  }
+  const dispatch = useDispatch()
+  const [amountAdd, setAmountAdd] = useState(1)
+
+  const handleAmountProductsInCart = () => {
+    props = { ...props, amountAdd }
+    dispatch(addToCart(props))
+  }
 
   return (
-    <div className="flex justify-center secondColorBg backgroundImg">
+    <div className="secondColorBg backgroundImg">
       <img src={props.image} alt="new arrivals" />
-      <div className="backgroundImgHover"></div>
+      <div
+        className="backgroundImgHover"
+        onClick={() => moveToDetailProductPage(props.id)}
+      ></div>
       <div
         className={
           props.sales
-            ? "capitalize font-semibold mainColorBg textSale"
-            : "hidden" 
+            ? 'capitalize font-semibold mainColorBg textSale'
+            : 'hidden'
         }
       >
         {props.sales}
@@ -28,15 +48,10 @@ function ImageAnimation(props: any) {
       <div className="newArrivalCart flex justify-between">
         <div
           className="flex justify-center"
-          onClick={() => {
-            dispatch(incrementProductsInCart());
-            dispatch(addToCart(props));
-          }}
+          onClick={handleAmountProductsInCart}
         >
           <ShoppingCartOutlined className="cursor-pointer flex flex-col justify-center px-3" />
-          <span className="capitalize flex items-center text-xs">
-            add to cart
-          </span>
+          <span className="flex items-center text-xs">Add To Cart</span>
         </div>
         <div className="flex items-center">
           <HeartOutlined className="mr-4" />
@@ -44,7 +59,7 @@ function ImageAnimation(props: any) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default ImageAnimation;
+export default ImageAnimation
