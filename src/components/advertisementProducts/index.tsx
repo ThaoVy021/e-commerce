@@ -1,21 +1,21 @@
-import { Col, Row, Skeleton } from 'antd'
-import BigAdver from './bigAdver'
-import SmallAdver from './smallAdver'
-import './index.scss'
-import { useDispatch, useSelector } from 'react-redux'
+import { Col, Row, Skeleton } from "antd";
+import BigAdver from "./bigAdver";
+import SmallAdver from "./smallAdver";
+import "./index.scss";
+import { useDispatch, useSelector } from "react-redux";
 import {
   advertisementProducts,
   fetchAllProducts,
-} from '../../store/slices/allProducts'
-import { useEffect } from 'react'
+} from "../../store/slices/allProducts";
+import { useEffect } from "react";
 
 function AdvertisementProducts() {
-  const dispatch = useDispatch()
-  const advertisementProductShow = useSelector(advertisementProducts)
+  const dispatch = useDispatch();
+  const advertisementProductShow = useSelector(advertisementProducts);
 
   useEffect(() => {
-    dispatch(fetchAllProducts() as any)
-  }, [])
+    dispatch(fetchAllProducts() as any);
+  }, []);
 
   return (
     <div className="flex justify-center">
@@ -37,7 +37,10 @@ function AdvertisementProducts() {
               description={advertisementProductShow[0].description}
             />
           </Col>
-          <Col span={12} className="AdvertisementProductsIpad">
+          <Col
+            span={12}
+            className="flex justify-center AdvertisementProductsIpad"
+          >
             <BigAdver
               id={advertisementProductShow[1].id}
               title={advertisementProductShow[1].title}
@@ -60,7 +63,7 @@ function AdvertisementProducts() {
         </Row>
       )}
     </div>
-  )
+  );
 }
 
-export default AdvertisementProducts
+export default AdvertisementProducts;

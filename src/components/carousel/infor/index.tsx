@@ -35,7 +35,7 @@ function InforCarousel(props: InformationInCart) {
         <Title level={4} className="capitalize secondLightColor">
           great design collection
         </Title>
-        <Title level={1} className="capitalize secondBoldColor nameProduct">
+        <Title level={2} className="capitalize secondBoldColor nameProduct">
           {props.title}
         </Title>
         <Paragraph className="text-ellipsis text-base text-left leading-8 secondLightColor">
