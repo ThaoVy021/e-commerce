@@ -1,22 +1,22 @@
-import "./index.scss";
-import { Card, Col, Row, Button, Space, Typography } from "antd";
-import { useNavigate } from "react-router-dom";
-import React from "react";
-const { Title, Paragraph } = Typography;
+import './index.scss'
+import { Card, Col, Row, Button, Space, Typography } from 'antd'
+import { useNavigate } from 'react-router-dom'
+import React from 'react'
+const { Title, Paragraph } = Typography
 
 interface PropsBigAdver {
-  id: number;
-  image: string;
-  title: string;
-  description: string;
-  price: number;
+  id: number
+  image: string
+  title: string
+  description: string
+  price: number
 }
 
 function BigAdver(props: PropsBigAdver) {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const moveToDetailProductPage = (id: number) => {
-    navigate(`/pageDetailProduct/${id}`);
-  };
+    navigate(`/pageDetailProduct/${id}`)
+  }
 
   return (
     <Card
@@ -29,7 +29,7 @@ function BigAdver(props: PropsBigAdver) {
       >
         <Col span={12} className="flex">
           <div className="m-auto">
-            <img src={props.image} alt="product" className="w-56 h-44" />
+            <img src={props.image} alt="product" className="w-56" />
           </div>
         </Col>
         <Col span={12} className="bigAdverMobile">
@@ -61,7 +61,7 @@ function BigAdver(props: PropsBigAdver) {
         </Col>
       </Row>
     </Card>
-  );
+  )
 }
 
-export default BigAdver;
+export default BigAdver
