@@ -5,6 +5,10 @@
   .ant-card-body {
     .ant-card-meta {
       .ant-card-meta-detail {
+        @media (max-width: 1024px) {
+          text-align: center;
+        }
+
         .ant-card-meta-title {
           color: $mainColor !important;
         }
@@ -16,7 +20,7 @@
 .ant-card-body {
   @media (max-width: 1024px) {
     margin: 0 auto;
-    width: 45%;
+    // width: 45%;
   }
   @media (max-width: 768px) {
     width: 100%;
@@ -52,13 +56,13 @@
       margin: 0 auto !important;
     }
 
-    .ant-card-meta-title {
-      text-align: start;
-    }
+    // .ant-card-meta-title {
+    //   text-align: start;
+    // }
 
-    .ant-card-meta-description {
-      text-align: start;
-    }
+    // .ant-card-meta-description {
+    //   text-align: start;
+    // }
   }
 }
 

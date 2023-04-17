@@ -14,9 +14,9 @@
     justify-content: center;
     margin: 0 auto;
     padding: 24px 0 !important;
-    @media (max-width: 1024px) {
-      width: 45%;
-    }
+    // @media (max-width: 1024px) {
+    //   width: 45%;
+    // }
 
     @media (max-width: 768px) {
       width: 100%;
@@ -30,6 +30,7 @@
         .ant-col {
           margin: 0 auto;
           max-width: 100%;
+          text-align: center;
         }
       }
 
@@ -53,9 +54,7 @@
 
 .advertisementProducts:hover {
   box-shadow: none;
-}
 
-.advertisementProducts:hover {
   .inforAdvertisementProducts {
     .titleInforAdvertisementProducts .titleColor {
       color: $mainColor !important;
@@ -75,6 +74,10 @@
   }
   @media (max-width: 1024px) {
     padding: 3rem 1rem !important;
+
+    .textSale {
+      justify-content: center;
+    }
   }
 }
 

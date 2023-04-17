@@ -42,7 +42,7 @@ function BigAdver(props: PropsBigAdver) {
             <Paragraph className="text-ellipsis overflow-hidden pt-4 text-sm secondLightColor w-46 h-18">
               {props.description}
             </Paragraph>
-            <div className="flex pt-2">
+            <div className="flex pt-2 textSale">
               <div className="titleColor font-medium">Sales Start from</div>
               <div className="mainColor pl-2 font-medium">$ {props.price}</div>
             </div>

@@ -1,8 +1,9 @@
 .AdvertisementProducts {
   @media (max-width: 1280px) {
     padding: 6rem 0;
-      .ant-col-12 {
-        padding-left: 32px !important;
+      .AdvertisementBigProducts {
+        padding-left: 0 !important;
+        padding-right: 32px !important;
       }
   }
   @media (max-width: 1024px) {
