@@ -1,25 +1,25 @@
-import { Col, Row, Carousel } from "antd";
-import Picture from "./picture";
-import InforCarousel from "./infor";
-import "./index.scss";
-import { advertisementProducts } from "../../store/slices/allProducts";
-import { useSelector } from "react-redux";
+import { Col, Row, Carousel } from 'antd'
+import Picture from './picture'
+import InforCarousel from './infor'
+import './index.scss'
+import { advertisementProducts } from '../../store/slices/allProducts'
+import { useSelector } from 'react-redux'
 interface InformationCarouselProductShow {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  price: number;
+  id: number
+  title: string
+  description: string
+  image: string
+  price: number
 }
 
 function Slide() {
-  const carouselProductShow = useSelector(advertisementProducts);
+  const carouselProductShow = useSelector(advertisementProducts)
 
   return (
     <div id="home" className="secondColorBg">
       <Carousel
-        // autoplay
-        dots={{ className: "dots" }}
+        autoplay
+        dots={{ className: 'dots' }}
         className="flex justify-center customizeDots"
       >
         {carouselProductShow.map(
@@ -42,11 +42,11 @@ function Slide() {
                 </Row>
               </div>
             </div>
-          )
+          ),
         )}
       </Carousel>
     </div>
-  );
+  )
 }
 
-export default Slide;
+export default Slide

@@ -44,7 +44,9 @@ function BigAdver(props: PropsBigAdver) {
             </Paragraph>
             <div className="flex pt-2 textSale">
               <div className="titleColor font-medium">Sales Start from</div>
-              <div className="mainColor pl-2 font-medium">$ {props.price}</div>
+              <div className="mainColor pl-2 font-medium">
+                $ {props.price.toLocaleString('en-US')}
+              </div>
             </div>
             <Space className="mt-6">
               <Button

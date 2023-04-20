@@ -1,33 +1,33 @@
-import { Button, Space, Typography } from "antd";
-import { PlusCircleOutlined } from "@ant-design/icons";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../../store/slices/cart";
+import { Button, Space, Typography } from 'antd'
+import { PlusCircleOutlined } from '@ant-design/icons'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../../store/slices/cart'
 
-import "./index.scss";
-import { useState } from "react";
+import './index.scss'
+import { useState } from 'react'
 
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph } = Typography
 
 interface InformationInCart {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  price: number;
-  oldPrice: number;
-  amountAdd?: number;
+  id: number
+  title: string
+  description: string
+  image: string
+  price: number
+  oldPrice: number
+  amountAdd?: number
 }
 
 function InforCarousel(props: InformationInCart) {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const moveToDetailProductPage = (id: number) => {
-    navigate(`/pageDetailProduct/${id}`);
-  };
+    navigate(`/pageDetailProduct/${id}`)
+  }
 
-  const [amountAdd, setAmountAdd] = useState(1);
+  const [amountAdd, setAmountAdd] = useState(1)
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   return (
     <div className="w-full items-start pt-20 pl-28 inforCarousel">
@@ -42,17 +42,19 @@ function InforCarousel(props: InformationInCart) {
           {props.description}
         </Paragraph>
         <div className="flex items-start pt-4">
-          <div className="flex font-medium price">$ {props.price}</div>
+          <div className="flex font-medium price">
+            $ {props.price.toLocaleString('en-US')}
+          </div>
           <del className="secondLightColor pl-4 font-medium">
-            $ {props.oldPrice}
+            $ {props.oldPrice.toLocaleString('en-US')}
           </del>
         </div>
         <Space className="my-8 styleMobile">
           <Button
             type="primary"
             onClick={() => {
-              props = { ...props, amountAdd };
-              dispatch(addToCart(props));
+              props = { ...props, amountAdd }
+              dispatch(addToCart(props))
             }}
             className="text-base font-medium mainColorBg hover:bg-transparent buttonAdd"
           >
@@ -70,7 +72,7 @@ function InforCarousel(props: InformationInCart) {
         </Space>
       </div>
     </div>
-  );
+  )
 }
 
-export default InforCarousel;
+export default InforCarousel

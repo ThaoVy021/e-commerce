@@ -22,7 +22,7 @@ function InformationNewArrivals(props: PropsInformationNewArrivals) {
         {props.title}
       </Title>
       <p className="flex justify-center mt-2 text-base titleColor">
-        $ {props.price}
+        $ {props.price.toLocaleString('en-US')}
       </p>
     </div>
   )
