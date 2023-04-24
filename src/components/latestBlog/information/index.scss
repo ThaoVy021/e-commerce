@@ -12,3 +12,11 @@
     margin: 0 auto;
   }
 }
+
+.latestBlog {
+  @media (max-width: 1536px) {
+   padding: 1.25rem 0 !important;
+   width: 100% !important;
+   margin: 0 auto;
+ }
+}

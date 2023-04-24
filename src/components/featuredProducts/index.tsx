@@ -2,6 +2,7 @@ import InformationNewArrivals from '../newArrivals/information'
 import { featuredProducts } from '../../mockdata/FeaturedProducts'
 import { Col, Row, Rate, Typography } from 'antd'
 import ImageFeatureProducts from './image'
+import './index.scss'
 
 const { Title } = Typography
 
@@ -26,7 +27,7 @@ function FeaturedProducts() {
               className="relative cursor-pointer capitalize textHoverChangeColor"
             >
               <ImageFeatureProducts image={featuredProduct.image} />
-              <div className="flex justify-center px-4 pt-4 ">
+              <div className="flex justify-center pt-4 rateFeaturedProducts">
                 <Rate
                   disabled
                   defaultValue={featuredProduct.rate}
