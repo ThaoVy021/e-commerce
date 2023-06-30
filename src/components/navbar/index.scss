@@ -1,4 +1,4 @@
-@import "../../App.scss";
+@import '../../App.scss';
 
 .sticky {
   position: sticky;
@@ -28,7 +28,7 @@
 }
 
 .logoSine {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 @media (max-width: 1280px) {
@@ -38,8 +38,11 @@
 }
 
 @media (max-width: 1024px) {
-  .headerLogoNavBar {
+  .headerLogoNavBarHomePage {
     flex-direction: row-reverse;
+  }
+  .LogoNavBarWhenMenuHidden {
+    margin-left: 8rem !important;
   }
   .headerLogo {
     margin-left: -120px;
@@ -50,6 +53,9 @@
 @media (max-width: 570px) {
   .headerLogo {
     margin-left: 0;
+  }
+  .LogoNavBarWhenMenuHidden {
+    margin-left: 2rem !important;
   }
 }
 

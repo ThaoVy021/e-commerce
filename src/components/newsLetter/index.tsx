@@ -1,7 +1,7 @@
-import { SendOutlined } from "@ant-design/icons";
-import { Col, Row, Descriptions, Input, Space } from "antd";
-import { newsLetters } from "../../mockdata/NewsLetter";
-import "./index.scss";
+import { SendOutlined } from '@ant-design/icons'
+import { Col, Row, Descriptions, Input, Space } from 'antd'
+import { newsLetters } from '../../mockdata/NewsLetter'
+import './index.scss'
 
 function NewsLetter() {
   return (
@@ -33,7 +33,10 @@ function NewsLetter() {
               </Descriptions>
             </Col>
           ))}
-          <Col span={6} className="capitalize relative lastNewsLetter">
+          <Col
+            span={6}
+            className="capitalize relative lastNewsLetter newsLettersStyle"
+          >
             <Descriptions
               title="newsletter"
               column={1}
@@ -53,7 +56,7 @@ function NewsLetter() {
         </Row>
       </div>
     </div>
-  );
+  )
 }
 
-export default NewsLetter;
+export default NewsLetter

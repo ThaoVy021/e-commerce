@@ -1,11 +1,55 @@
 .pageDetailProduct {
-  height: 600px;
+  height: fit-content;
+
+  .slideDisplayMobile {
+    @media (max-width: 1024px) {
+      display: block;
+    }
+
+    .pictureOfDetailPage {
+      @media (max-width: 1024px) {
+        margin: 0 auto;
+      }
+
+      .slidePicture {
+        margin-top: 4rem;
+
+        @media (max-width: 1024px) {
+          margin-top: 2rem;
+        }
+
+        img {
+          margin: 0 auto;
+          width: 70%;
+          height: auto;
+
+          @media (max-width: 1024px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .colInforOfDetailPage {
+      @media (max-width: 1024px) {
+        max-width: 100%;
+      }
+
+      .inforCarousel {
+        @media (max-width: 1024px) {
+          padding-top: 0 !important;
+          max-width: 50%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
 
   .ant-collapse > .ant-collapse-item > .ant-collapse-header {
     padding: 0;
   }
 
-  @media (max-width: 540px) {
-    height: 800px;
-  }
+  // @media (max-width: 540px) {
+  //   height: 800px;
+  // }
 }

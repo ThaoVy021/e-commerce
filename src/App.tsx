@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import { GoogleAuthProvider } from './components/pageLogin/googleLogin'
 import Header from './components/navbar'
 import PageDetailProduct from './components/pageDetailProduct'
+import NewsLetter from './components/newsLetter'
 import Footer from './components/footer'
 import HomePage from './components/pageHome'
 import PageCart from './components/pageCart'
@@ -37,6 +38,7 @@ function App() {
         <Routes>
           <Route path="/pageCart" element={<PageCart />} />
         </Routes>
+        <NewsLetter />
         <Footer />
       </div>
     </GoogleAuthProvider>

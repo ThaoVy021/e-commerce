@@ -36,19 +36,21 @@ function PageDetailProduct() {
         <div className="headerStyle pageDetailProduct">
           {products.map((detailProduct: any) => {
             if (tabId === String(detailProduct.id)) {
+              console.log('detailProduct', detailProduct)
               return (
                 <Row
-                  className="pb-10 z-10 container slideDisplayMobile"
-                  gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
+                  className="pb-24 container slideDisplayMobile"
+                  // gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
                   key={detailProduct.id}
                 >
-                  <Col span={10} className="colPicture">
+                  <Col span={12} className="colPicture pictureOfDetailPage">
                     <Picture image={detailProduct.category.image} />
                   </Col>
-                  <Col span={14} className="colInfor">
+                  <Col span={12} className="colInfor colInforOfDetailPage">
                     <InforPageDetailProduct
                       id={detailProduct.id}
                       title={detailProduct.title}
+                      nameCategory={detailProduct.category.name}
                       image={detailProduct.category.image}
                       price={detailProduct.price}
                       rate={slideDatas.data[0].rate}

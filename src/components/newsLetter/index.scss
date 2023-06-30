@@ -1,9 +1,23 @@
-@import "../../App.scss";
+@import '../../App.scss';
 
 .newsLettersStyle {
+  @media (max-width: 768px) {
+    padding: 0 2.5rem !important;
+  }
+
+  .ant-descriptions .ant-descriptions-view {
+    @media (max-width: 768px) {
+      column-count: 2;
+    }
+  }
+
   .ant-descriptions-title {
     font-size: 18px;
     margin-bottom: 25px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 0 !important;
+    }
   }
 
   .ant-descriptions-item-content {
@@ -25,35 +39,66 @@
     margin-bottom: 25px;
   }
 
-  .ant-descriptions-view {
-    .lastNewsLetterInfor {
-      .ant-descriptions-item-content {
-        font-size: 14px;
-        text-transform: initial;
-        margin-bottom: 25px;
-        color: #a09e9c;
-        line-height: 1.8;
+  .ant-descriptions-header {
+    @media (max-width: 768px) {
+      align-items: center;
+    }
+
+    .ant-descriptions-view {
+      @media (max-width: 768px) {
+        column-count: 1 !important;
+      }
+
+      .lastNewsLetterInfor {
+        .ant-descriptions-item-content {
+          font-size: 14px;
+          text-transform: initial;
+          margin-bottom: 25px;
+          color: #a09e9c;
+          line-height: 1.8;
+
+          @media (max-width: 768px) {
+            margin: 0 auto;
+            justify-content: center;
+          }
+        }
+      }
+
+      .ant-input-affix-wrapper {
+        background: #fff;
+        padding: 10px 15px;
+        outline: 0 !important;
+        box-shadow: 0 5px 15px #00000033;
+        border: 0;
+      }
+
+      .ant-input-affix-wrapper:hover {
+        box-shadow: 0 5px 15px #00000066;
       }
     }
+  }
 
-    .ant-input-affix-wrapper {
-      background: #fff;
-      padding: 10px 15px;
-      outline: 0 !important;
-      box-shadow: 0 5px 15px #00000033;
-      border: 0;
-    }
-
-    .ant-input-affix-wrapper:hover {
-      box-shadow: 0 5px 15px #00000066;
+  .ant-descriptions-view {
+    @media (max-width: 768px) {
+      column-count: 1 !important;
     }
   }
 }
 
 @media (max-width: 1024px) {
   .newsLetters {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    display: flex !important;
+
     .ant-col-6 {
       max-width: 100% !important;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .newsLetters {
+    display: block !important;
   }
 }

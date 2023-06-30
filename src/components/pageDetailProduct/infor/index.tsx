@@ -3,8 +3,8 @@ import { PlusCircleOutlined } from '@ant-design/icons'
 import { Radio, Collapse } from 'antd'
 import './index.scss'
 import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { addToCart, selectProductsInCart } from '../../../store/slices/cart'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../../store/slices/cart'
 
 const { Panel } = Collapse
 const { Title } = Typography
@@ -17,13 +17,13 @@ interface PropsInforPageDetailProduct {
   image: string
   id?: string
   amountAdd?: number
+  nameCategory: string
 }
 
 function InforPageDetailProduct(props: PropsInforPageDetailProduct) {
   const [amountAdd, setamountAdd] = useState<number>(1)
 
   const dispatch = useDispatch()
-  const productsInCart = useSelector(selectProductsInCart)
 
   const handleDecrement = () => {
     setamountAdd(amountAdd - 1)
@@ -34,11 +34,17 @@ function InforPageDetailProduct(props: PropsInforPageDetailProduct) {
 
   const onChange = (key: string | string[]) => {}
   return (
-    <div className="w-full pt-8 pl-28 inforCarousel">
-      <div className="flex flex-col items-start">
+    <div className="w-full pt-8 inforCarousel">
+      <div className="flex flex-col items-start inforDetailPageMobile">
         <Title level={2} className="capitalize titleColor pt-6">
           {props.title}
         </Title>
+        <span className="flex text-base titleColor">
+          Category:{' '}
+          <div className="items-center font-medium text-lg pl-4">
+            {props.nameCategory}
+          </div>
+        </span>
         <div className="flex items-center pt-4 titleColor">
           Starts from
           <div className="font-medium text-lg pl-4">
