@@ -34,7 +34,7 @@ function InforPageDetailProduct(props: PropsInforPageDetailProduct) {
 
   const onChange = (key: string | string[]) => {}
   return (
-    <div className="w-full pt-8 inforCarousel">
+    <div className="w-full pt-8 inforCarousel inforDetailPage">
       <div className="flex flex-col items-start inforDetailPageMobile">
         <Title level={2} className="capitalize titleColor pt-6">
           {props.title}
@@ -83,14 +83,14 @@ function InforPageDetailProduct(props: PropsInforPageDetailProduct) {
             <p>{props.description}</p>
           </Panel>
         </Collapse>
-        <Space className="my-8 styleMobile">
+        <Space className="my-8 styleMobile buttonAddDetailPage">
           <Button
             type="primary"
             onClick={() => {
               props = { ...props, amountAdd }
               dispatch(addToCart(props))
             }}
-            className="text-base font-medium mainColorBg hover:bg-transparent buttonAdd"
+            className="text-base font-medium mainColorBg hover:bg-transparent buttonAdd "
           >
             <PlusCircleOutlined className="hover:mainColor align-[0.1em]" />
             Add To Cart

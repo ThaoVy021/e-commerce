@@ -1,10 +1,6 @@
 .AdvertisementProducts {
   @media (max-width: 1280px) {
     padding: 6rem 0;
-      .AdvertisementBigProducts {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-      }
   }
   @media (max-width: 1024px) {
     display: block;
@@ -23,8 +19,25 @@
 }
 
 .AdvertisementProductsIpad {
+  &:nth-child(1) {
+    padding: 0 !important;
+  }
+
+  &:nth-last-child(1) {
+    padding: 0 !important;
+  }
+
   @media (max-width: 1024px) {
-    max-width: 100%;
+    max-width: 75%;
+    margin: 0 auto;
     margin-bottom: 25px;
+
+    &:nth-child(2) {
+      padding: 0 !important;
+    }
+  }
+
+  @media (max-width: 638px) {
+    max-width: 100%;
   }
 }

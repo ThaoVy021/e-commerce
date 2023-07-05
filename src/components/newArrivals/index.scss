@@ -4,21 +4,22 @@
   margin: -16px 0px !important;
   .backgroundImg {
     position: relative;
-    min-height: 310px;
+    // min-height: 310px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    @media (max-width: 1024px) {
-      min-height: 370px;
-    }
+    // @media (max-width: 1024px) {
+    //   min-height: 370px;
+    // }
 
     img {
-      width: auto;
+      width: 100%;
       height: auto;
       transition: 0.3s linear;
       vertical-align: middle;
       max-width: 100%;
+      padding: 1.5rem;
     }
 
     .backgroundImgHover {
@@ -59,12 +60,6 @@
     color: white;
   }
 
-  .textHover {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
   @media (max-width: 1280px) {
     padding-left: 0;
     padding-right: 0;
@@ -72,8 +67,13 @@
 
   @media (max-width: 1024px) {
     .textHoverChangeColor {
-      max-width: 50%;
+      max-width: 75%;
       margin: 0 auto;
+    }
+
+    .setLayout {
+      column-count: 2;
+      margin-bottom: 1rem;
     }
 
     display: block;
@@ -84,9 +84,26 @@
     padding-right: 10px !important;
   }
 
-  @media (max-width: 520px) {
+  @media (max-width: 638px) {
     .textHoverChangeColor {
       max-width: 100%;
+
+      .informationMobile {
+        padding: 0;
+      }
+    }
+  }
+
+  @media (max-width: 450px) {
+    .setLayout {
+      column-count: 1;
+      margin-bottom: 1rem;
+    }
+
+    .textHoverChangeColor {
+      .informationMobile {
+        padding: 1rem;
+      }
     }
   }
 }

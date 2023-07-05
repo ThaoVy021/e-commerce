@@ -1,4 +1,36 @@
-@import "../../../App.scss";
+@import '../../../App.scss';
+
+.inforDetailPage {
+  @media (max-width: 1024px) {
+    max-width: 100% !important;
+  }
+
+  .inforDetailPageMobile {
+    @media (max-width: 1024px) {
+      align-items: center;
+    }
+
+    @media (max-width: 540px) {
+      align-items: flex-start;
+    }
+
+    h2 {
+      @media (max-width: 540px) {
+        font-size: 28px;
+      }
+    }
+
+    .buttonAddDetailPage {
+      @media (max-width: 1024px) {
+        justify-content: center;
+      }
+
+      @media (max-width: 540px) {
+        justify-content: start;
+      }
+    }
+  }
+}
 
 .inforCarousel {
   animation: carousel 1s alternate;
@@ -8,7 +40,7 @@
 }
 
 .price::before {
-  content: "";
+  content: '';
   width: 25px;
   height: 1px;
   background: $secondBoldColor;

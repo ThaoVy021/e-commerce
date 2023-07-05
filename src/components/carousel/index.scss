@@ -1,40 +1,35 @@
-@import "../../App.scss";
+@import '../../App.scss';
 
 .headerStyle {
-  height: 600px;
   text-align: center;
   background: $secondColor;
   position: relative;
   display: flex;
   justify-content: center;
   width: 100%;
-  @media (max-width: 1280px) {
-    height: 600px;
-  }
-  @media (max-width: 1024px) {
-    height: 500px;
-  }
-  @media (max-width: 540px) {
-    height: 850px;
 
+  @media (max-width: 1024px) {
     .slideDisplayMobile {
       display: block;
+      padding: 10px 20px !important;
     }
 
-    .inforCarousel h1 {
-      font-size: 1.25rem !important;
+    .inforCarousel {
+      padding-top: 1rem;
+      h1 {
+        font-size: 1.25rem !important;
+      }
     }
+
     .colInfor {
       max-width: 100% !important;
       flex: 1 !important;
-      padding: 10px 50px !important;
     }
 
     .colPicture {
-      margin-left: 50px;
-
+      max-width: 100%;
       .slidePicture {
-        margin-top: 2rem;
+        margin-top: 1rem;
 
         img {
           width: 100%;
@@ -54,7 +49,7 @@
       background-color: transparent;
       border-color: transparent;
       border-width: 1px;
-  
+
       &.slick-active {
         // height: 24px;
         // top: -10px;
@@ -71,15 +66,12 @@
     }
   }
 
-  .slick-dots
-  li
-  button::after {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: $mainColor;
-  // left: 25%;
-  // top: 25%;
+  .slick-dots li button::after {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: $mainColor;
+    // left: 25%;
+    // top: 25%;
+  }
 }
-}
-

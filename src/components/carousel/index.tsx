@@ -28,7 +28,7 @@ function Slide() {
               <div className="headerStyle">
                 <Row
                   className="pb-10 z-10 w-full container slideDisplayMobile"
-                  gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
+                  gutter={{ xs: 4, sm: 8, md: 12, lg: 24 }}
                 >
                   <Col span={14} className="colInfor">
                     <InforCarousel

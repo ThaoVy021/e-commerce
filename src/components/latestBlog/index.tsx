@@ -1,9 +1,9 @@
-import { Col, Row, Typography } from "antd";
-import { latestBlogs } from "../../mockdata/LatestBlog";
-import ImageLatestBlog from "./image";
-import InformationLatestBlog from "./information";
+import { Col, Row, Typography } from 'antd'
+import { latestBlogs } from '../../mockdata/LatestBlog'
+import ImageLatestBlog from './image'
+import InformationLatestBlog from './information'
 
-const { Title } = Typography;
+const { Title } = Typography
 
 function LatestBlog() {
   return (
@@ -17,8 +17,8 @@ function LatestBlog() {
 
         <div>
           <Row
-            className="flex justify-between py-10 px-24 w-full newArrivals"
-            gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
+            className="py-10 px-12 w-full newArrivals"
+            gutter={{ xs: 4, sm: 8, md: 12, lg: 24 }}
           >
             {latestBlogs.data.map((latestBlog) => (
               <Col
@@ -39,7 +39,7 @@ function LatestBlog() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default LatestBlog;
+export default LatestBlog

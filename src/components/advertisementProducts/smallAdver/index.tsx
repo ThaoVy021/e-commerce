@@ -25,7 +25,7 @@ function SmallAdver(props: PropsSmallAdver) {
         <img
           alt="advertimentProducts"
           src={props.image}
-          className=" px-14 py-6 smallAdverImg"
+          className="p-6 smallAdverImg"
         />
       }
       className="secondColorBg productHover"

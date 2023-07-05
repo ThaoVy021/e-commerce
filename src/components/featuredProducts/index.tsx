@@ -17,14 +17,14 @@ function FeaturedProducts() {
         </div>
 
         <Row
-          className="py-10 px-24 newArrivals"
-          gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
+          className="py-10 px-12 newArrivals"
+          gutter={{ xs: 4, sm: 8, md: 12, lg: 24 }}
         >
           {featuredProducts.data.map((featuredProduct) => (
             <Col
               span={6}
               key={featuredProduct.id}
-              className="relative cursor-pointer capitalize textHoverChangeColor"
+              className="relative cursor-pointer capitalize textHoverChangeColor setLayout"
             >
               <ImageFeatureProducts image={featuredProduct.image} />
               <div className="flex justify-center pt-4 rateFeaturedProducts">

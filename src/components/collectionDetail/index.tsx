@@ -1,15 +1,15 @@
-import { Button, Col, Row, Space, Typography } from "antd";
-import { collection } from "../../mockdata/Collection";
-import "./index.scss";
+import { Button, Col, Row, Space, Typography } from 'antd'
+import { collection } from '../../mockdata/Collection'
+import './index.scss'
 
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph } = Typography
 
 function CollectionDetail() {
   return (
     <div>
       <div className="banner">
         <div className="container collection">
-          <Row className="px-32 inforCollection">
+          <Row className="px-20 inforCollection">
             <Col span={12} className="inforCollectionCol">
               <Title level={2} className="capitalize">
                 {collection.data[0].productName}
@@ -19,7 +19,7 @@ function CollectionDetail() {
               </Paragraph>
               <div className="collectionPrice font-bold mb-8">
                 <div className="text-white">
-                  String From{" "}
+                  String From{' '}
                   <span className="mainColor">
                     $ {collection.data[0].price}
                   </span>
@@ -39,7 +39,7 @@ function CollectionDetail() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default CollectionDetail;
+export default CollectionDetail

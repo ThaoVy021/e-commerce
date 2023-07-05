@@ -12,7 +12,7 @@ interface PropsInformationLatestBlog {
 
 function InformationLatestBlog(props: PropsInformationLatestBlog) {
   return (
-    <div className="py-5 px-6 textHover latestBlog">
+    <div className="py-5 textHover latestBlog">
       <Title level={5} className="secondBoldColor titleLatestBlog">
         {props.productName}
       </Title>

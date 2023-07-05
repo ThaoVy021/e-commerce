@@ -17,7 +17,10 @@ function InformationNewArrivals(props: PropsInformationNewArrivals) {
   }
 
   return (
-    <div className="p-4" onClick={() => moveToDetailProductPage(props.id)}>
+    <div
+      className="p-4 informationMobile"
+      onClick={() => moveToDetailProductPage(props.id)}
+    >
       <Title level={5} className="flex justify-center titleColor textHover">
         {props.title}
       </Title>

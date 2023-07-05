@@ -1,5 +1,49 @@
-.formUser {
-    .ant-form-item {
-        margin-bottom: 0 !important;
+.userLayoutMobile {
+  @media (max-width: 768px) {
+    width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  h3 {
+    width: 50%;
+    margin: 0 auto;
+    justify-content: space-between;
+
+    @media (max-width: 1024px) {
+      width: 100% !important;
     }
+  }
+
+  .formUser {
+    text-align: center;
+    width: 50%;
+    @media (max-width: 1024px) {
+      width: 100% !important;
+    }
+
+    .ant-form-item {
+      margin-bottom: 0 !important;
+      width: fit-content;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+
+      .ant-form-item-label {
+        @media (max-width: 768px) {
+          max-width: fit-content;
+        }
+      }
+
+      .ant-form-item-control {
+        white-space: pre;
+        overflow: scroll;
+
+        @media (max-width: 768px) {
+          max-width: 100%;
+          text-align: left;
+        }
+      }
+    }
+  }
 }

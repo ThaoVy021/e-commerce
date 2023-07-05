@@ -23,8 +23,8 @@ function AdvertisementProducts() {
         <Skeleton />
       ) : (
         <Row
-          className="py-24 px-12 container AdvertisementProducts"
-          gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
+          className="p-12 justify-center container AdvertisementProducts"
+          gutter={{ xs: 4, sm: 8, md: 12, lg: 24 }}
         >
           <Col
             span={6}

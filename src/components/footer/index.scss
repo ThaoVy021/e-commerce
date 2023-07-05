@@ -1,7 +1,14 @@
-@import "../../App.scss";
+@import '../../App.scss';
 
 .colorFooter {
   color: #a5adb3;
+}
+
+.textFooter {
+  @media (max-width: 370px) {
+    display: block !important;
+    text-align: center;
+  }
 }
 
 .buttonBackTop {

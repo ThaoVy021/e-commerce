@@ -1,4 +1,4 @@
-@import "../../../App.scss";
+@import '../../../App.scss';
 
 .textHover:hover {
   .titleLatestBlog {
@@ -6,17 +6,17 @@
   }
 }
 
-.textHover {
-  @media (max-width: 521px) {
-    width: 80%;
+.latestBlog {
+  @media (max-width: 1536px) {
+    padding: 1.25rem 0 !important;
+    width: 100% !important;
     margin: 0 auto;
   }
 }
 
-.latestBlog {
-  @media (max-width: 1536px) {
-   padding: 1.25rem 0 !important;
-   width: 100% !important;
-   margin: 0 auto;
- }
+.latestBlog .textHover {
+  @media (max-width: 521px) {
+    width: 80% !important;
+    margin: 0 auto;
+  }
 }

@@ -5,6 +5,10 @@
     padding: 0 2.5rem !important;
   }
 
+  @media (max-width: 540px) {
+    padding: 10px !important;
+  }
+
   .ant-descriptions .ant-descriptions-view {
     @media (max-width: 768px) {
       column-count: 2;

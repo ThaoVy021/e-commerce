@@ -1,4 +1,4 @@
-@import "../../../App.scss";
+@import '../../../App.scss';
 
 .productHover.ant-card-hoverable:hover {
   box-shadow: none;
@@ -18,9 +18,10 @@
 }
 
 .ant-card-body {
+  padding: 16px;
+  padding-top: 0 !important;
   @media (max-width: 1024px) {
     margin: 0 auto;
-    // width: 45%;
   }
   @media (max-width: 768px) {
     width: 100%;
@@ -31,6 +32,7 @@
   .ant-card-meta-title {
     font-size: 20px !important;
     color: $titleColor !important;
+    white-space: normal;
   }
 }
 
@@ -46,7 +48,8 @@
     padding: 1.5rem 3rem !important;
     width: 18rem !important;
     height: auto !important;
-    margin: 0 auto ;
+    margin: 0 auto;
+    padding-bottom: 0.5rem !important;
   }
 
   .smallAdverInfor {
@@ -55,14 +58,6 @@
       width: 100%;
       margin: 0 auto !important;
     }
-
-    // .ant-card-meta-title {
-    //   text-align: start;
-    // }
-
-    // .ant-card-meta-description {
-    //   text-align: start;
-    // }
   }
 }
 
@@ -80,7 +75,7 @@
       justify-content: center;
 
       .smallAdverImg {
-        padding: 1.5rem 0.5rem !important;
+        padding: 0.5rem !important;
         width: 240px;
         height: auto;
       }

@@ -71,15 +71,15 @@ function NewArrivals() {
 
         <div>
           <Row
-            className="py-10 px-24 newArrivals"
-            gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
+            className="py-10 px-12 newArrivals"
+            gutter={{ xs: 4, sm: 8, md: 16, lg: 24 }}
           >
             {products.map((product: any) => (
               // newArrival.sale === true ?
               <Col
                 span={6}
                 key={product.id}
-                className="relative cursor-pointer textHoverChangeColor"
+                className="relative cursor-pointer textHoverChangeColor setLayout"
               >
                 <ImageAnimation
                   {...product}

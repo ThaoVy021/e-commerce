@@ -9,10 +9,17 @@ import HomePage from './components/pageHome'
 import PageCart from './components/pageCart'
 import LoginPage from './components/pageLogin'
 import UserPage from './components/pageUser'
+import { useLocation } from 'react-router-dom'
 
 import './App.scss'
 
 function App() {
+  const location = useLocation()
+  const shouldShowNewsLetter =
+    location.pathname !== '/sign_in' &&
+    location.pathname !== '/sign_up' &&
+    location.pathname !== '/user'
+
   return (
     <GoogleAuthProvider>
       <div className="App relative">
@@ -38,7 +45,9 @@ function App() {
         <Routes>
           <Route path="/pageCart" element={<PageCart />} />
         </Routes>
-        <NewsLetter />
+        <div className={`${shouldShowNewsLetter ? 'block' : 'hidden'}`}>
+          <NewsLetter />
+        </div>
         <Footer />
       </div>
     </GoogleAuthProvider>

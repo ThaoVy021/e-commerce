@@ -34,8 +34,9 @@ function Footer() {
             <BehanceOutlined className="hover:text-[#e99c2e]" />
           </div>
 
-          <span className="flex justify-center colorFooter">
-            © 2045 All Rights Reserved | Design by: <a href="/"> ThemeSINE</a>
+          <span className="flex justify-center colorFooter textFooter">
+            <div> © 2045 All Rights Reserved | Design by: </div>
+            <a href="/"> ThemeSINE</a>
           </span>
         </div>
       </div>

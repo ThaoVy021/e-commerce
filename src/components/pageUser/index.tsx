@@ -8,13 +8,13 @@ function UserPage() {
   return (
     <div>
       <div className="container m-auto">
-        <div className="w-96 m-auto userLayoutMobile">
+        <div className="px-24 m-auto userLayoutMobile">
           <Title
             level={3}
-            className="w-full flex justify-between px-12 pt-8 secondBoldColor"
+            className="w-full flex justify-start pt-8 secondBoldColor"
           >
             User Information
-            <Form.Item>
+            <Form.Item className="ml-8">
               <Button
                 type="primary"
                 className="w-full text-sm font-medium bg-transparent mainColor buttonAdd"
@@ -28,26 +28,26 @@ function UserPage() {
             name="basic"
             initialValues={{ remember: true }}
             autoComplete="off"
-            className="flex-col m-auto w-full px-12 formUser"
+            className="flex-col m-auto w-full formUser"
           >
             <Form.Item label="Name" name="name" className="font-bold">
-              <span className="font-normal">{user.data[0].name}</span>
+              <div className="font-normal">{user.data[0].name}</div>
             </Form.Item>
             <Form.Item label="User Name" name="username" className="font-bold">
-              <span className="font-normal">{user.data[0].userName}</span>
+              <div className="font-normal">{user.data[0].userName}</div>
             </Form.Item>
             <Form.Item label="Email" name="email" className="font-bold">
-              <span className="font-normal">{user.data[0].email}</span>
+              <div className="font-normal">{user.data[0].email}</div>
             </Form.Item>
             <Form.Item
               label="Phone Number"
               name="phoneNumber"
               className="font-bold"
             >
-              <span className="font-normal">{user.data[0].phoneNumber}</span>
+              <div className="font-normal">{user.data[0].phoneNumber}</div>
             </Form.Item>
             <Form.Item label="Address" name="address" className="font-bold">
-              <span className="font-normal">{user.data[0].address}</span>
+              <div className="font-normal">{user.data[0].address}</div>
             </Form.Item>
           </Form>
         </div>

@@ -23,17 +23,14 @@ function BigAdver(props: PropsBigAdver) {
       hoverable
       className="secondColorBg cursor-pointer h-full advertisementProducts"
     >
-      <Row
-        className="z-10 container"
-        gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
-      >
+      <Row className="z-10 container" gutter={{ xs: 4, sm: 8, md: 12, lg: 24 }}>
         <Col span={12} className="flex">
           <div className="m-auto">
             <img src={props.image} alt="product" className="w-56" />
           </div>
         </Col>
         <Col span={12} className="bigAdverMobile">
-          <div className="p-4 inforAdvertisementProducts">
+          <div className="p-4 pl-0 inforAdvertisementProducts">
             <div className="titleInforAdvertisementProducts">
               <Title level={4} className="capitalize titleColor">
                 {props.title}

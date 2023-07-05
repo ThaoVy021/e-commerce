@@ -8,8 +8,8 @@ function NewsLetter() {
     <div>
       <div className="container m-auto">
         <Row
-          className="py-10 px-32 newArrivals newsLetters"
-          gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
+          className="py-10 px-16 newArrivals newsLetters"
+          gutter={{ xs: 4, sm: 8, md: 12, lg: 24 }}
         >
           {newsLetters.data.map((newsLetter) => (
             <Col
