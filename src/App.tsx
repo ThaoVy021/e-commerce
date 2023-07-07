@@ -9,6 +9,7 @@ import HomePage from './components/pageHome'
 import PageCart from './components/pageCart'
 import LoginPage from './components/pageLogin'
 import UserPage from './components/pageUser'
+import PageLoves from './components/pageLoves'
 import { useLocation } from 'react-router-dom'
 
 import './App.scss'
@@ -44,6 +45,9 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/pageCart" element={<PageCart />} />
+        </Routes>
+        <Routes>
+          <Route path="/pageLoves" element={<PageLoves />} />
         </Routes>
         <div className={`${shouldShowNewsLetter ? 'block' : 'hidden'}`}>
           <NewsLetter />

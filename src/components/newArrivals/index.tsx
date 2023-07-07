@@ -79,12 +79,12 @@ function NewArrivals() {
               <Col
                 span={6}
                 key={product.id}
-                className="relative cursor-pointer textHoverChangeColor setLayout"
+                className="relative cursor-pointer textHoverChangeColor setLayout tagSale"
               >
                 <ImageAnimation
                   {...product}
                   productName={product.title}
-                  sales="Hot"
+                  sales="Sale"
                 />
                 <InformationNewArrivals {...product} />
               </Col>

@@ -56,8 +56,20 @@
     height: 30px;
     line-height: 30px;
     text-align: center;
-    background: #47d93c;
-    color: white;
+  }
+
+  .tagSale:nth-child(odd) {
+    .textSale {
+      background: #47d93c;
+      color: white;
+    }
+  }
+
+  .tagSale:nth-child(even) {
+    .textSale {
+      background: transparent;
+      color: transparent;
+    }
   }
 
   @media (max-width: 1280px) {

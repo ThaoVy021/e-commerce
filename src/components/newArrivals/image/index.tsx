@@ -7,7 +7,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { addToCart } from '../../../store/slices/cart'
+import { addToCart, addToLovesPage } from '../../../store/slices/cart'
 
 interface PropsImageAnimation {
   id: number
@@ -29,6 +29,11 @@ function ImageAnimation(props: PropsImageAnimation) {
     dispatch(addToCart(props))
   }
 
+  const handleProductsInLovesPage = () => {
+    props = { ...props }
+    dispatch(addToLovesPage(props))
+  }
+
   return (
     <div className="secondColorBg backgroundImg">
       <img src={props.image} alt="new arrivals" />
@@ -37,11 +42,7 @@ function ImageAnimation(props: PropsImageAnimation) {
         onClick={() => moveToDetailProductPage(props.id)}
       ></div>
       <div
-        className={
-          props.sales
-            ? 'capitalize font-semibold mainColorBg textSale'
-            : 'hidden'
-        }
+        className={props.sales ? 'capitalize font-semibold textSale' : 'hidden'}
       >
         {props.sales}
       </div>
@@ -54,7 +55,7 @@ function ImageAnimation(props: PropsImageAnimation) {
           <span className="flex items-center text-xs">Add To Cart</span>
         </div>
         <div className="flex items-center">
-          <HeartOutlined className="mr-4" />
+          <HeartOutlined className="mr-4" onClick={handleProductsInLovesPage} />
           <ExpandOutlined className="mr-4" />
         </div>
       </div>

@@ -15,7 +15,8 @@ function Header() {
     location.pathname !== '/PageCart' &&
     location.pathname !== '/sign_in' &&
     location.pathname !== '/sign_up' &&
-    location.pathname !== '/user'
+    location.pathname !== '/user' &&
+    location.pathname !== '/pageLoves'
 
   const shouldShowToolBar =
     location.pathname !== '/sign_in' && location.pathname !== '/sign_up'
