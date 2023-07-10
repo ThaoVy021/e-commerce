@@ -172,10 +172,16 @@ function Toolbar(props: PropsToolbar) {
           onClick={() => props.handleSearch()}
         />
       </Tooltip>
-      <Space size="middle">
-        <Popover placement="bottom" content={lovesList}>
-          <HeartOutlined className="cursor-pointer flex flex-col justify-center px-2 text-[#a9a6a6] hover:text-[#e99c2e] text-xl" />
-        </Popover>
+      <Space size="middle" className="mt-2 iconCart">
+        <Badge
+          size="default"
+          count={uniqueIdsLovesPage.length}
+          className="countNumber"
+        >
+          <Popover placement="bottom" content={lovesList}>
+            <HeartOutlined className="cursor-pointer flex flex-col justify-center px-2 text-[#a9a6a6] hover:text-[#e99c2e] text-xl" />
+          </Popover>
+        </Badge>
       </Space>
       <Space size="middle" className="mt-2 iconCart">
         <Badge size="default" count={uniqueIds.length} className="countNumber">

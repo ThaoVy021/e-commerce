@@ -9,6 +9,7 @@ import {
   selectProductsInCart,
   removeSelectedItems,
 } from '../../store/slices/cart'
+import { useNavigate } from 'react-router-dom'
 
 interface CartType {
   Key: React.Key
@@ -23,6 +24,11 @@ function PageCart() {
   const productsInCart = useSelector(selectProductsInCart)
 
   const dispatch = useDispatch()
+
+  const navigate = useNavigate()
+  const moveToInforShip = () => {
+    navigate('/inforShip/')
+  }
 
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
     setSelectedRowKeys(newSelectedRowKeys)
@@ -199,9 +205,10 @@ function PageCart() {
             <Button
               type="primary"
               size="large"
+              onClick={() => moveToInforShip()}
               className="my-8 text-base font-medium mainColorBg hover:bg-transparent buttonAdd"
             >
-              Thanh Toán
+              Buy Now
             </Button>
           </div>
         </div>

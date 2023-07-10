@@ -10,6 +10,7 @@ import PageCart from './components/pageCart'
 import LoginPage from './components/pageLogin'
 import UserPage from './components/pageUser'
 import PageLoves from './components/pageLoves'
+import InforShip from './components/pageCart/inforShip'
 import { useLocation } from 'react-router-dom'
 
 import './App.scss'
@@ -19,7 +20,8 @@ function App() {
   const shouldShowNewsLetter =
     location.pathname !== '/sign_in' &&
     location.pathname !== '/sign_up' &&
-    location.pathname !== '/user'
+    location.pathname !== '/user' &&
+    location.pathname !== '/inforShip'
 
   return (
     <GoogleAuthProvider>
@@ -48,6 +50,9 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/pageLoves" element={<PageLoves />} />
+        </Routes>
+        <Routes>
+          <Route path="/inforShip" element={<InforShip />} />
         </Routes>
         <div className={`${shouldShowNewsLetter ? 'block' : 'hidden'}`}>
           <NewsLetter />

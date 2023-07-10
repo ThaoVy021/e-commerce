@@ -36,3 +36,13 @@ $titleColor: #64748b;
 .App {
   width: 100% !important;
 }
+
+.ant-picker-dropdown {
+  .ant-btn-primary {
+    background-color: $mainColor !important;
+  }
+
+  .ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner {
+    background: $mainColor !important;
+  }
+}

@@ -51,7 +51,7 @@ const PageLoves = () => {
           </Title>
         </div>
         <List
-          className="cursor-pointer demo-loadmore-list"
+          className="demo-loadmore-list"
           itemLayout="horizontal"
           pagination={{
             pageSize: 5,
@@ -72,12 +72,14 @@ const PageLoves = () => {
                   </Popconfirm>
                 </Space>,
               ]}
-              onClick={() => moveToDetailProductPage(item.id)}
             >
               <List.Item.Meta
                 avatar={<Avatar src={item.image} />}
                 title={
-                  <div className="flex justify-start font-semibold titleColor textHover">
+                  <div
+                    className="flex justify-start font-semibold cursor-pointer titleColor textHover"
+                    onClick={() => moveToDetailProductPage(item.id)}
+                  >
                     {item.productName}
                   </div>
                 }
