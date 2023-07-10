@@ -7,7 +7,8 @@ import React from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { addToCart, addToLovesPage } from '../../../store/slices/cart'
+import { addToCart } from '../../../store/slices/cart'
+import { addToLovesPage } from '../../../store/slices/loves'
 
 interface PropsImageAnimation {
   id: number

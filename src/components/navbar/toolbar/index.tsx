@@ -8,12 +8,11 @@ import {
 import { Button, Badge, Space, Popover, message, Tooltip } from 'antd'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
+import { removeInCarts, selectProductsInCart } from '../../../store/slices/cart'
 import {
-  removeInCarts,
   removeInLovesPage,
-  selectProductsInCart,
   selectProductsInLovesPage,
-} from '../../../store/slices/cart'
+} from '../../../store/slices/loves'
 interface PropsToolbar {
   id: number
   title: string

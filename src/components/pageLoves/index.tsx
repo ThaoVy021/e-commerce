@@ -1,113 +1,88 @@
-import React, { useEffect, useState } from 'react'
-import { Avatar, Button, List, Skeleton } from 'antd'
-import axios from 'axios'
+import React from 'react'
+import { Avatar, List, Popconfirm, Space, Typography } from 'antd'
 import './index.scss'
 import { useDispatch, useSelector } from 'react-redux'
+import {
+  removeInLovesPage,
+  selectProductsInLovesPage,
+} from '../../store/slices/loves'
+import { DeleteOutlined } from '@ant-design/icons'
+import { useNavigate } from 'react-router-dom'
 
-const BASE_URL = process.env.REACT_APP_V_COMMERCE_URL
-
-interface DataType {
-  gender?: string
-  name: {
-    title?: string
-    first?: string
-    last?: string
-  }
-  email?: string
-  picture: {
-    large?: string
-    medium?: string
-    thumbnail?: string
-  }
-  nat?: string
-  loading: boolean
+const { Title } = Typography
+interface LovesType {
+  Key: React.Key
+  title: string
+  description: string
+  image: string
 }
 
-const count = 3
-const fakeDataUrl = `https://randomuser.me/api/?results=${count}&inc=name,gender,email,nat,picture&noinfo`
-
 const PageLoves = () => {
-  const [products, setProducts] = useState()
-  const [initLoading, setInitLoading] = useState(true)
-  const [loading, setLoading] = useState(false)
-  const [data, setData] = useState<DataType[]>([])
-  const [list, setList] = useState<DataType[]>([])
-
-  //   const productsInCart = useSelector()
+  const productsInLovesPage = useSelector(selectProductsInLovesPage)
 
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    fetch(fakeDataUrl)
-      .then((res) => res.json())
-      .then((res) => {
-        setInitLoading(false)
-        setData(res.results)
-        setList(res.results)
-      })
-  }, [])
-
-  const onLoadMore = () => {
-    setLoading(true)
-    setList(
-      data.concat(
-        [...new Array(count)].map(() => ({
-          loading: true,
-          name: {},
-          picture: {},
-        })),
-      ),
-    )
-    fetch(fakeDataUrl)
-      .then((res) => res.json())
-      .then((res) => {
-        const newData = data.concat(res.results)
-        setData(newData)
-        setList(newData)
-        setLoading(false)
-        window.dispatchEvent(new Event('resize'))
-      })
+  const navigate = useNavigate()
+  const moveToDetailProductPage = (id: number) => {
+    navigate(`/pageDetailProduct/${id}`)
   }
 
-  const loadMore =
-    !initLoading && !loading ? (
-      <div
-        style={{
-          textAlign: 'center',
-          marginTop: 12,
-          height: 32,
-          lineHeight: '32px',
-        }}
-      >
-        <Button onClick={onLoadMore}>loading more</Button>
-      </div>
-    ) : null
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(`${BASE_URL}/products`)
-      setProducts(result.data)
+  const uniqueItems: LovesType[] = []
+  productsInLovesPage.forEach((e: any) => {
+    if (uniqueItems.indexOf(e.id) === -1) {
+      uniqueItems.push(e.id)
     }
-    fetchData()
-  }, [])
+  })
+
+  const loves = uniqueItems.map((uq) => {
+    const products = productsInLovesPage.filter((e: any) => e.id === uq)
+    return {
+      ...products[0],
+      key: products[0].id,
+    }
+  })
+
   return (
     <div id="pageLoves">
-      <div className="container m-auto p-20">
+      <div className="container m-auto py-12 px-20 pageLoves">
+        <div className="flex justify-center pb-12">
+          <Title level={2} className="titleColor">
+            Loved Products
+          </Title>
+        </div>
         <List
-          className="demo-loadmore-list"
-          loading={initLoading}
+          className="cursor-pointer demo-loadmore-list"
           itemLayout="horizontal"
-          loadMore={loadMore}
-          dataSource={list}
+          pagination={{
+            pageSize: 5,
+          }}
+          dataSource={loves}
           renderItem={(item) => (
-            <List.Item actions={[<a key="list-loadmore-edit">Delete</a>]}>
-              <Skeleton avatar title={false} loading={item.loading} active>
-                <List.Item.Meta
-                  avatar={<Avatar src={item.picture.large} />}
-                  title={<a href="https://ant.design">{item.name?.last}</a>}
-                  description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-                />
-              </Skeleton>
+            <List.Item
+              actions={[
+                <Space size="middle" className="cursor-pointer">
+                  <Popconfirm
+                    title="Sure to delete?"
+                    okText="Yes"
+                    cancelText="No"
+                    className="popconfirm deleteHover"
+                    onConfirm={() => dispatch(removeInLovesPage(item))}
+                  >
+                    <DeleteOutlined />
+                  </Popconfirm>
+                </Space>,
+              ]}
+              onClick={() => moveToDetailProductPage(item.id)}
+            >
+              <List.Item.Meta
+                avatar={<Avatar src={item.image} />}
+                title={
+                  <div className="flex justify-start font-semibold titleColor textHover">
+                    {item.productName}
+                  </div>
+                }
+                description={item.description}
+              />
             </List.Item>
           )}
         />

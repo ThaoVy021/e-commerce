@@ -1,3 +1,34 @@
-.demo-loadmore-list {
-  min-height: 350px;
+@import '../../App.scss';
+
+.pageLoves {
+  @media (max-width: 1023px) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  @media (max-width: 768px) {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .demo-loadmore-list {
+    min-height: 350px;
+
+    .ant-list-item-meta {
+      &:hover {
+        .textHover {
+          color: $mainColor !important;
+        }
+      }
+    }
+
+    .ant-list-item-action {
+      &:hover {
+        .deleteHover {
+          color: $mainColor !important;
+          font-weight: 700;
+        }
+      }
+    }
+  }
 }
